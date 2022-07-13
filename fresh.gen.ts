@@ -4,17 +4,23 @@
 
 import * as $0 from "./routes/api/joke.ts";
 import * as $1 from "./routes/index.tsx";
-import * as $2 from "./routes/pokemon/[id].tsx";
-import * as $$0 from "./islands/Counter.tsx";
+import * as $2 from "./routes/list.tsx";
+import * as $3 from "./routes/pokemon/[id].tsx";
+import * as $$0 from "./islands/AddToList.tsx";
+import * as $$1 from "./islands/HeaderCounter.tsx";
+import * as $$2 from "./islands/List.tsx";
 
 const manifest = {
   routes: {
     "./routes/api/joke.ts": $0,
     "./routes/index.tsx": $1,
-    "./routes/pokemon/[id].tsx": $2,
+    "./routes/list.tsx": $2,
+    "./routes/pokemon/[id].tsx": $3,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
+    "./islands/AddToList.tsx": $$0,
+    "./islands/HeaderCounter.tsx": $$1,
+    "./islands/List.tsx": $$2,
   },
   baseUrl: import.meta.url,
 };

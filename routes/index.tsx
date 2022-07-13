@@ -57,7 +57,7 @@ export default function Home(
 
       <div class={tw`grid sm:grid-cols-2 md:grid-cols-3 mt-5 gap-2`}>
         {pokemon.map((pokemon) => (
-          <PokemonCard key={pokemon.id} pokemon={pokemon} />
+          <PokemonCard key={pokemon.id} pokemon={pokemon} allowAdd />
         ))}
       </div>
     </div>
