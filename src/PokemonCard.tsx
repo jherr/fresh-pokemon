@@ -15,9 +15,7 @@ export default function PokemonCard({
   return (
     <div class={tw`rounded-xl border-1 p-5`}>
       <div class={tw`text-2xl font-bold mb-2`}>{pokemon.name}</div>
-      <img
-        src={`https://4he1myaw.directus.app/assets/${pokemon.image}?access_token=6ufWWYoxYX9bCBCHGJ-dp6kWf--APWHG`}
-      />
+      <img src={pokemon.image} />
       <div class={tw`mt-5 flex`}>
         <a class={tw`underline flex-grow`} href={`/pokemon/${pokemon.id}`}>
           View Details...

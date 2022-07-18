@@ -1,4 +1,6 @@
 import { HandlerContext } from "$fresh/server.ts";
+
+import { Pokemon } from "../../utils/types.ts";
 import { DB, TOKEN } from "../../utils/env.ts";
 
 export const handler = async (
@@ -14,5 +16,12 @@ export const handler = async (
     `https://${DB}.directus.app/items/pokemon?access_token=${TOKEN}&limit=9${filter}`
   ).then((res) => res.json());
 
-  return new Response(JSON.stringify(pokemon.data));
+  return new Response(
+    JSON.stringify(
+      pokemon.data.map((p: Pokemon) => ({
+        ...p,
+        image: `https://${DB}.directus.app/assets/${p.image}?access_token=${TOKEN}`,
+      }))
+    )
+  );
 };

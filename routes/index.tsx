@@ -25,7 +25,13 @@ export const handler: Handlers<{
     if (!pokemon) {
       return new Response("Pokemon search failed", { status: 404 });
     }
-    return ctx.render({ pokemon: pokemon.data, query });
+    return ctx.render({
+      pokemon: pokemon.data.map((p: Pokemon) => ({
+        ...p,
+        image: `https://${DB}.directus.app/assets/${p.image}?access_token=${TOKEN}`,
+      })),
+      query,
+    });
   },
 };
 
